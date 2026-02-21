@@ -7,9 +7,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background:
-    linear-gradient(135deg, #667eea) 0%,
-    #764ba2 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -53,7 +51,7 @@ input[type="number"] {
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   outline: none;
-  transform: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
   font-family: inherit;
 }
 
@@ -89,7 +87,7 @@ input[type="number"] {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transform: all 0.3s ease;
+  transition: all 0.3s ease;
   color: white;
   font-family: inherit;
 }
@@ -218,7 +216,7 @@ input[type="number"] {
 }
 
 .calculator {
-  animation: fadeIn 0.5 ease-out;
+  animation: fadeIn 0.5s ease-out;
 }
 
 /* LOADING STATE */

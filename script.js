@@ -12,9 +12,9 @@ const clearBtn = document.getElementById("clear");
 
 /* HELPER FUNCTIONS */
 /**
- - Get input values and convert to numbers
- - @returns {Object} Object with num1 and num2 properties
-*/
+ * Get input values and convert to numbers
+ * @returns {Object} Object with num1 and num2 properties
+ */
 function getInputValues() {
   const num1 = parseFloat(num1Input.value);
   const num2 = parseFloat(num2Input.value);
@@ -22,9 +22,9 @@ function getInputValues() {
 }
 
 /**
- - Validate if both inputs are valid numbers
- - @param{number} num1 = First number
- - @param{number} num2 = Second number
+ * Validate if both inputs are valid numbers
+ * @param{number} num1 = First number
+ * @param{number} num2 = Second number
  @returns {boolean} True if both numbers are valid
 */
 function validateInputs(num1, num2) {
@@ -36,10 +36,10 @@ function validateInputs(num1, num2) {
 }
 
 /**
- - Display result with styling
- - @param{string|number} message = Result message or number
- - @param{string} type = 'success' or 'error'
-*/
+ * Display result with styling
+ * @param{string|number} message = Result message or number
+ * @param{string} type = 'success' or 'error'
+ */
 function displayResult(message, type = "success") {
   resultDisplay.textContent = message;
 
@@ -55,8 +55,8 @@ function displayResult(message, type = "success") {
 }
 
 /**
- - Clear all inputs and result
-*/
+ * Clear all inputs and result
+ */
 function clearCalculator() {
   num1Input.value = "";
   num2Input.value = "";
@@ -69,9 +69,9 @@ function clearCalculator() {
 
 /* OPERATION FUNCTIONS */
 /** 
- - Add two numbers
- - @param{number} a = First number
- - @param{number} b = Second number
+ * Add two numbers
+ * @param{number} a = First number
+ * @param{number} b = Second number
  @returns {number} Sum of a and b
 */
 function add(a, b) {
@@ -79,9 +79,9 @@ function add(a, b) {
 }
 
 /** 
- - Subtract two numbers
- - @param{number} a = First number
- - @param{number} b = Second number
+ * Subtract two numbers
+ * @param{number} a = First number
+ * @param{number} b = Second number
  @returns {number} Sum of a and b
 */
 function subtract(a, b) {
@@ -89,9 +89,9 @@ function subtract(a, b) {
 }
 
 /** 
- - Multiply two numbers
- - @param{number} a = First number
- - @param{number} b = Second number
+ * Multiply two numbers
+ * @param{number} a = First number
+ * @param{number} b = Second number
  @returns {number} Sum of a and b
 */
 function multiply(a, b) {
@@ -99,9 +99,9 @@ function multiply(a, b) {
 }
 
 /** 
- - Divide two numbers
- - @param{number} a = First number
- - @param{number} b = Second number
+ * Divide two numbers
+ * @param{number} a = First number
+ * @param{number} b = Second number
  @returns {number} Sum of a and b
 */
 function divide(a, b) {
@@ -123,7 +123,7 @@ addBtn.addEventListener("click", () => {
   if (!validateInputs(num1, num2)) return;
 
   const result = add(num1, num2);
-  displayResult(`Result:${result}`, "success");
+  displayResult(`Result: ${result}`, "success");
 });
 
 /**
@@ -135,7 +135,7 @@ subtractBtn.addEventListener("click", () => {
   if (!validateInputs(num1, num2)) return;
 
   const result = subtract(num1, num2);
-  displayResult(`Result:${result}`, "success");
+  displayResult(`Result: ${result}`, "success");
 });
 
 /**
@@ -147,7 +147,7 @@ multiplyBtn.addEventListener("click", () => {
   if (!validateInputs(num1, num2)) return;
 
   const result = multiply(num1, num2);
-  displayResult(`Result:${result}`, "success");
+  displayResult(`Result: ${result}`, "success");
 });
 
 /**
@@ -163,7 +163,7 @@ divideBtn.addEventListener("click", () => {
   if (typeof result === "string") {
     displayResult(result, "error");
   } else {
-    displayResult(`Result:${result}`, "success");
+    displayResult(`Result: ${result}`, "success");
   }
 });
 
