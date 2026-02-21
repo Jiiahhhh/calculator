@@ -23,10 +23,10 @@ function getInputValues() {
 
 /**
  * Validate if both inputs are valid numbers
- * @param{number} num1 = First number
- * @param{number} num2 = Second number
- @returns {boolean} True if both numbers are valid
-*/
+ * @param {number} num1 - First number
+ * @param {number} num2 = Second number
+ * @returns {boolean} True if both numbers are valid
+ */
 function validateInputs(num1, num2) {
   if (isNaN(num1) || isNaN(num2)) {
     displayResult("Error: Please enter valid numbers", "error");
@@ -37,8 +37,8 @@ function validateInputs(num1, num2) {
 
 /**
  * Display result with styling
- * @param{string|number} message = Result message or number
- * @param{string} type = 'success' or 'error'
+ * @param {string|number} message - Result message or number
+ * @param {string} type - 'success' or 'error'
  */
 function displayResult(message, type = "success") {
   resultDisplay.textContent = message;
@@ -68,42 +68,42 @@ function clearCalculator() {
 }
 
 /* OPERATION FUNCTIONS */
-/** 
+/**
  * Add two numbers
- * @param{number} a = First number
- * @param{number} b = Second number
- @returns {number} Sum of a and b
-*/
+ * @param {number} a - First number
+ * @param {number} b - Second number
+ * @returns {number} Sum of a and b
+ */
 function add(a, b) {
   return a + b;
 }
 
-/** 
+/**
  * Subtract two numbers
- * @param{number} a = First number
- * @param{number} b = Second number
- @returns {number} Sum of a and b
-*/
+ * @param {number} a - First number
+ * @param {number} b - Second number
+ * @returns {number} Sum of a and b
+ */
 function subtract(a, b) {
   return a - b;
 }
 
-/** 
+/**
  * Multiply two numbers
- * @param{number} a = First number
- * @param{number} b = Second number
- @returns {number} Sum of a and b
-*/
+ * @param {number} a - First number
+ * @param {number} b - Second number
+ * @returns {number} Sum of a and b
+ */
 function multiply(a, b) {
   return a * b;
 }
 
-/** 
+/**
  * Divide two numbers
- * @param{number} a = First number
- * @param{number} b = Second number
- @returns {number} Sum of a and b
-*/
+ * @param {number} a - First number
+ * @param {number} b - Second number
+ * @returns {number} Sum of a and b
+ */
 function divide(a, b) {
   if (b === 0) {
     return "Error: Cannot divide by zero";
