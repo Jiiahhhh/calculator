@@ -9,6 +9,11 @@ const subtractBtn = document.getElementById("subtract");
 const multiplyBtn = document.getElementById("multiply");
 const divideBtn = document.getElementById("divide");
 const clearBtn = document.getElementById("clear");
+const historyList = document.getElementById("history");
+const clearHistoryBtn = document.getElementById("clear-history");
+
+// History array
+let operationHistory = [];
 
 /* HELPER FUNCTIONS */
 /**
@@ -124,6 +129,7 @@ addBtn.addEventListener("click", () => {
 
   const result = add(num1, num2);
   displayResult(`Result: ${result}`, "success");
+  addToHistory(num1, "+", num2, result);
 });
 
 /**
@@ -136,6 +142,7 @@ subtractBtn.addEventListener("click", () => {
 
   const result = subtract(num1, num2);
   displayResult(`Result: ${result}`, "success");
+  addToHistory(num1, "-", num2, result);
 });
 
 /**
@@ -148,6 +155,7 @@ multiplyBtn.addEventListener("click", () => {
 
   const result = multiply(num1, num2);
   displayResult(`Result: ${result}`, "success");
+  addToHistory(num1, "x", num2, result);
 });
 
 /**
@@ -164,6 +172,7 @@ divideBtn.addEventListener("click", () => {
     displayResult(result, "error");
   } else {
     displayResult(`Result: ${result}`, "success");
+    addToHistory(num1, "÷", num2, result);
   }
 });
 
@@ -183,4 +192,52 @@ document.addEventListener("keypress", (event) => {
   }
 });
 
-console.log("Event listeners attached successfully!");
+/**
+ * Add operation to history
+ * @param {number} num1 - First number
+ * @param {string} operator - Operation symbol
+ * @param {number} num2 - Second number
+ * @param {number|string} result - Result or error message
+ */
+function addToHistory(num1, operator, num2, result) {
+  // Don't add errors to history
+  if (typeof result === "string" && result.includes("Error")) {
+    return;
+  }
+
+  // Format the entry
+  const entry = `${num1} ${operator} ${num2} = ${result}`;
+  operationHistory.push(entry);
+
+  updateHistoryDisplay();
+}
+
+/**
+ * Update history display
+ */
+function updateHistoryDisplay() {
+  if (operationHistory.length === 0) {
+    historyList.innerHTML = '<p class="history-empty">No calculations yet</p>';
+    return;
+  }
+
+  const recentHistory = operationHistory.slice(-10).reverse();
+  historyList.innerHTML = recentHistory
+    .map((entry) => `<p>${entry}</p>`)
+    .join("");
+}
+
+/**
+ * Clear history
+ */
+function clearHistory() {
+  operationHistory = [];
+  updateHistoryDisplay();
+}
+
+/**
+ * Handle clear history operation
+ */
+clearHistoryBtn.addEventListener("click", () => {
+  clearHistory();
+});

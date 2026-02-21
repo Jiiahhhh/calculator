@@ -235,3 +235,71 @@ input[type="number"] {
 .result.success #result-text {
   color: #4caf50;
 }
+
+/* HISTORY SECTION */
+.history-section {
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+}
+
+.history-section h3 {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.history-list {
+  max-height: 150px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.history-list p {
+  padding: 8px 12px;
+  margin: 5px 0;
+  background: white;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #333;
+  border-left: 3px solid #667eea;
+}
+
+.history-empty {
+  color: #999 !important;
+  font-style: italic;
+  text-align: center;
+  border-left: none !important;
+}
+
+.history-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.history-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.btn-clear-history {
+  width: 100%;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  padding: 10px;
+  font-size: 0.85rem;
+}
+
+.btn-clear-history:hover {
+  background: linear-gradient(135deg, #ee5a52, #dc4a3d);
+}
